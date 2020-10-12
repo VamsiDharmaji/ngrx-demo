@@ -1,0 +1,7 @@
+{
+    "todos": [
+      { "id": 1, "title": "learn Angular", "completed": true },
+      { "id": 2, "title": "learn RXJS", "completed": false },
+      { "id": 3, "title": "learn NGRX", "completed": false }
+    ]   
+  }
