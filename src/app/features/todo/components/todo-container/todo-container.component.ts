@@ -15,4 +15,18 @@ export class TodoContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  markForDelete(todoID: number) {
+    this.todoService.deleteTodo(todoID).subscribe();
+    this.todos$ = this.todoService.getAllTodos();
+  }
+
+  // markAsDone(id: number) {
+  //   this.todoService.markAsComplete(id).subscribe();
+  // }
+
+  markAsDone(todo: Todo) {
+    this.todoService.markAsComplete(todo).subscribe();
+    this.todos$ = this.todoService.getAllTodos();
+  }
 }

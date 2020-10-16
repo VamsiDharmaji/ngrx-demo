@@ -1,0 +1,10 @@
+input[type="checkbox"] {
+  padding: 0.5rem;
+}
+:host .box {
+  margin-top: 0.5rem;
+}
+
+.delete {
+  background-color: rgba(241, 70, 104, 0.8);
+}

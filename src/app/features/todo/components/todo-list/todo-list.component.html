@@ -1,1 +1,13 @@
-<p>todo-list works!</p>
+<ng-container [ngSwitch]="listType">
+  <h2 *ngSwitchCase="0">Pending</h2>
+  <h2 *ngSwitchCase="1">Completed</h2>
+</ng-container>
+
+<ng-container>
+  <app-todo
+    (delete)="markForDelete($event)"
+    (done)="markAsDone($event)"
+    *ngFor="let todo of todos"
+    [todo]="todo"
+  ></app-todo>
+</ng-container>

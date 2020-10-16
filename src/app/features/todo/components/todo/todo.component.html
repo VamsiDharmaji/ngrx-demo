@@ -1,1 +1,23 @@
-<p>todo works!</p>
+<div class="box">
+  <div class="columns">
+    <div class="column is-narrow">
+      <input
+        type="checkbox"
+        [checked]="todo.completed ? true : null"
+        aria-label="Mark as complete"
+        (click)="markAsDone(todo)"
+      />
+    </div>
+    <div class="column">
+      {{ todo.title }}
+    </div>
+    <div *ngIf="todo.completed" class="column is-narrow">
+      <button
+        class="delete is-medium has-text-danger"
+        (click)="markForDelete(todo.id)"
+      >
+        delete
+      </button>
+    </div>
+  </div>
+</div>
