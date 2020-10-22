@@ -1,15 +1,23 @@
-
 <!-- <pre>{{ todos$ | async | json }} </pre> -->
 <div class="columns">
   <div class="column">
-    <app-add-todo></app-add-todo>
+    <app-add-todo (add)="addTodo($event)"></app-add-todo>
   </div>
 </div>
 <div class="columns">
   <div class="column is-half">
-    <app-todo-list (done)="markAsDone($event)" (delete)="markForDelete($event)"  [todos]="todos$ | async"></app-todo-list>
+    <app-todo-list
+      (done)="markAsDone($event)"
+      (delete)="markForDelete($event)"
+      [todos]="pendingTodos$ | async"
+    ></app-todo-list>
   </div>
   <div class="column is-half">
-    <app-todo-list (done)="markAsDone($event)" (delete)="markForDelete($event)" [listType]="1" [todos]="todos$ | async"></app-todo-list>
+    <app-todo-list
+      (done)="markAsDone($event)"
+      (delete)="markForDelete($event)"
+      [listType]="1"
+      [todos]="completedTodos$ | async"
+    ></app-todo-list>
   </div>
 </div>

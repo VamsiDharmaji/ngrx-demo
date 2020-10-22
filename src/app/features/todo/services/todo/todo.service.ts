@@ -33,7 +33,7 @@ export class TodoService {
     return this.http.patch<Todo>(
       `${this.apiUrl}/${todo.id}`,
       todo,
-      //[{ op: 'replace', path: '/completed', value: true }],
+      // [{ op: 'replace', path: '/completed', value: true }],
       this.httpOptions
     );
   }
